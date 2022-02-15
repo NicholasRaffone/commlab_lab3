@@ -39,8 +39,15 @@ setInterval(()=>{
     getDateColor(footer)
 },1000*60)
 
+const colors = ['black', 'gray', 'white']
+let colorcyle = 0;
 //also update once on load
 window.addEventListener('load',()=>{
-    getDateColor(footer)
+    getDateColor(footer);
+    footer.style.color=colors[colorcyle];
+})
+footer.addEventListener('click',()=>{
+    colorcyle++;
+    footer.style.color=colors[colorcyle%colors.length]
 })
 
